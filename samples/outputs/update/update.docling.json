@@ -1,0 +1,153 @@
+{
+  "schema_name": "DoclingDocument",
+  "version": "1.10.0",
+  "name": "update",
+  "origin": {
+    "mimetype": "message/rfc822",
+    "binary_hash": 9601599295670772914,
+    "filename": "update.eml"
+  },
+  "furniture": {
+    "self_ref": "#/furniture",
+    "children": [],
+    "content_layer": "furniture",
+    "name": "_root_",
+    "label": "unspecified"
+  },
+  "body": {
+    "self_ref": "#/body",
+    "children": [
+      {
+        "$ref": "#/texts/0"
+      },
+      {
+        "$ref": "#/texts/1"
+      },
+      {
+        "$ref": "#/texts/2"
+      },
+      {
+        "$ref": "#/texts/3"
+      },
+      {
+        "$ref": "#/texts/4"
+      },
+      {
+        "$ref": "#/texts/5"
+      },
+      {
+        "$ref": "#/texts/6"
+      },
+      {
+        "$ref": "#/texts/7"
+      }
+    ],
+    "content_layer": "body",
+    "name": "_root_",
+    "label": "unspecified"
+  },
+  "groups": [],
+  "texts": [
+    {
+      "self_ref": "#/texts/0",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "content_layer": "body",
+      "label": "title",
+      "prov": [],
+      "orig": "Pilot update: 497 sensors online",
+      "text": "Pilot update: 497 sensors online"
+    },
+    {
+      "self_ref": "#/texts/1",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "content_layer": "body",
+      "label": "text",
+      "prov": [],
+      "orig": "From: Priya Nair <priya@example.org>",
+      "text": "From: Priya Nair <priya@example.org>"
+    },
+    {
+      "self_ref": "#/texts/2",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "content_layer": "body",
+      "label": "text",
+      "prov": [],
+      "orig": "To: Pilot volunteers <volunteers@example.org>",
+      "text": "To: Pilot volunteers <volunteers@example.org>"
+    },
+    {
+      "self_ref": "#/texts/3",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "content_layer": "body",
+      "label": "text",
+      "prov": [],
+      "orig": "Date: 2026-09-30T09:15:00+00:00",
+      "text": "Date: 2026-09-30T09:15:00+00:00"
+    },
+    {
+      "self_ref": "#/texts/4",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "content_layer": "body",
+      "label": "text",
+      "prov": [],
+      "orig": "Hi all,",
+      "text": "Hi all,"
+    },
+    {
+      "self_ref": "#/texts/5",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "content_layer": "body",
+      "label": "text",
+      "prov": [],
+      "orig": "Quick update on the water sensor pilot:",
+      "text": "Quick update on the water sensor pilot:"
+    },
+    {
+      "self_ref": "#/texts/6",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "content_layer": "body",
+      "label": "text",
+      "prov": [],
+      "orig": "- 497 sensors are online, up from 425 last quarter.\n- South lost 7 sensors in the June storms; replacements arrive next week.\n- The Q3 budget (EUR 2,735) goes to the steering group on Monday.",
+      "text": "- 497 sensors are online, up from 425 last quarter.\n- South lost 7 sensors in the June storms; replacements arrive next week.\n- The Q3 budget (EUR 2,735) goes to the steering group on Monday."
+    },
+    {
+      "self_ref": "#/texts/7",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "content_layer": "body",
+      "label": "text",
+      "prov": [],
+      "orig": "Thanks for all the weekend installs!\nPriya",
+      "text": "Thanks for all the weekend installs!\nPriya"
+    }
+  ],
+  "pictures": [],
+  "tables": [],
+  "key_value_items": [],
+  "form_items": [],
+  "pages": {}
+}

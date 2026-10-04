@@ -1,0 +1,27 @@
+# Secrets
+.env
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Notebook scratch
+.ipynb_checkpoints/
+
+# Local conversion outputs (samples/outputs/ is committed on purpose)
+/outputs/
+
+# Packaging and CI scratch
+/build/
+/dist/
+*.egg-info/
+/.cache/
+
+# Real-document evaluation (the tooling lives on the eval/real-documents branch):
+# downloaded sources, raw generated artifacts and locks stay local
+/eval/
+
+# OS
+.DS_Store

@@ -1,0 +1,21 @@
+name: Feature request
+description: Describe the document problem and the result you need.
+title: "[Feature] "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What are you trying to do?
+      description: Describe your input type and the missing behavior, without private documents.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+      description: Give a small example and any alternatives you tried.
+  - type: textarea
+    id: limits
+    attributes:
+      label: Constraints
+      description: Cost, runtime, deployment, or compatibility needs.

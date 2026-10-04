@@ -1,0 +1,72 @@
+{
+  "status": "complete",
+  "caption": null,
+  "brief_file": "report.brief.md",
+  "index_file": "report.index.md",
+  "source": "samples/inputs/report.pdf",
+  "source_id": "/app/samples/inputs/report.pdf",
+  "detected_type": "pdf",
+  "detection": {
+    "label": "pdf",
+    "method": "magika"
+  },
+  "rendered_to_pdf": false,
+  "renderer": null,
+  "resolution": "high",
+  "use_gpu": true,
+  "device": "cpu",
+  "llm_layer": true,
+  "copy_editor_input": "page images",
+  "batch_size": 1,
+  "model": "gpt-6-luna",
+  "reasoning_effort": "low",
+  "tokens": {
+    "input": 25186,
+    "cached_input": 16232,
+    "cache_write": 8936,
+    "output": 1346,
+    "reasoning": 0
+  },
+  "estimated_cost_usd": 0.001954,
+  "prices": {
+    "checked": "2026-10-03",
+    "source": "https://developers.openai.com/api/docs/models/gpt-6-luna"
+  },
+  "seconds": 31.7,
+  "scanned_pages": [],
+  "rotated_pages": {},
+  "links": {
+    "found": 0,
+    "placed": 0,
+    "for_copy_editor": 0
+  },
+  "pages": [
+    {
+      "number": 1,
+      "edited_by": "copy-editor",
+      "changes": [
+        "Corrected the title to a document-level heading.",
+        "Reconstructed the displayed growth formula as a fraction and removed Docling's stray slash/escape characters.",
+        "Added a description of the chart image."
+      ],
+      "continuity_note": "Where I am: ## 2. How growth is measured.\nStill open: None.\nWatch for: None.",
+      "page_note": "Title: Quarterly Field Report: Water Sensor Pilot. Results by region table reports Q1/Q2 sensors and change for North, South, East, and West; Figure 1 charts the 2026 counts. Defines quarter-on-quarter growth as (Q2 − Q1) / Q1 × 100."
+    },
+    {
+      "number": 2,
+      "edited_by": "copy-editor",
+      "changes": [],
+      "continuity_note": "Where I am: ## 4. Budget for Q3.\nStill open: None.\nWatch for: None.",
+      "page_note": "Sections 3. Next steps and 4. Budget for Q3. The budget table lists replacement sensors (1,295 EUR), solar chargers (840 EUR), volunteer training (600 EUR), and total (2,735 EUR); the steering group will review the figures at its next meeting."
+    }
+  ],
+  "page_files": [
+    "report.p0001.md",
+    "report.p0002.md"
+  ],
+  "notes": [],
+  "versions": {
+    "everymd": "0.1.0",
+    "docling": "2.132.0"
+  }
+}

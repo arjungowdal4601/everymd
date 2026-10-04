@@ -1,0 +1,58 @@
+{
+  "status": "complete",
+  "caption": null,
+  "brief_file": "update.brief.md",
+  "index_file": null,
+  "source": "samples/inputs/update.eml",
+  "source_id": "/app/samples/inputs/update.eml",
+  "detected_type": "email",
+  "detection": {
+    "label": "eml",
+    "method": "magika"
+  },
+  "rendered_to_pdf": false,
+  "renderer": null,
+  "resolution": "high",
+  "use_gpu": true,
+  "device": "cpu",
+  "llm_layer": true,
+  "copy_editor_input": "skipped: no page images (Docling's text comes straight from the file)",
+  "batch_size": 1,
+  "model": "gpt-6-luna",
+  "reasoning_effort": "low",
+  "tokens": {
+    "input": 1534,
+    "cached_input": 0,
+    "cache_write": 0,
+    "output": 195,
+    "reasoning": 0
+  },
+  "estimated_cost_usd": 0.000251,
+  "prices": {
+    "checked": "2026-10-03",
+    "source": "https://developers.openai.com/api/docs/models/gpt-6-luna"
+  },
+  "seconds": 3.7,
+  "scanned_pages": [],
+  "rotated_pages": {},
+  "links": {
+    "found": 0,
+    "placed": 0,
+    "for_copy_editor": 0
+  },
+  "pages": [
+    {
+      "number": 1,
+      "edited_by": "docling",
+      "changes": [],
+      "continuity_note": null,
+      "page_note": null
+    }
+  ],
+  "page_files": [],
+  "notes": [],
+  "versions": {
+    "everymd": "0.1.0",
+    "docling": "2.132.0"
+  }
+}

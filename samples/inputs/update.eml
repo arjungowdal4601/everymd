@@ -1,0 +1,35 @@
+From: Priya Nair <priya@example.org>
+To: Pilot volunteers <volunteers@example.org>
+Subject: Pilot update: 497 sensors online
+Date: Wed, 30 Sep 2026 09:15:00 +0000
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="===============2243652549973380290=="
+
+--===============2243652549973380290==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+Hi all,
+
+Quick update on the water sensor pilot:
+
+- 497 sensors are online, up from 425 last quarter.
+- South lost 7 sensors in the June storms; replacements arrive next week.
+- The Q3 budget (EUR 2,735) goes to the steering group on Monday.
+
+Thanks for all the weekend installs!
+Priya
+
+--===============2243652549973380290==
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+<html><body><p>Hi all,</p><p>Quick update on the water sensor pilot:</p><tabl=
+e border=3D'1'><tr><th>Quarter</th><th>Sensors online</th></tr><tr><td>Q1 202=
+6</td><td>425</td></tr><tr><td>Q2 2026</td><td>497</td></tr></table><p>South =
+lost 7 sensors in the June storms; replacements arrive next week.</p><p>Thank=
+s for all the weekend installs!<br>Priya</p></body></html>
+
+--===============2243652549973380290==--

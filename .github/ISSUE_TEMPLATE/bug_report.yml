@@ -1,0 +1,37 @@
+name: Bad conversion or bug
+description: Report a reproducible problem without secrets or private documents.
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: "Never include a key, .env, password or access token. Redact private content. Only share documents you may redistribute."
+  - type: input
+    id: input-type
+    attributes:
+      label: Input type and version
+      placeholder: PDF scan; everymd 0.1.0
+    validations:
+      required: true
+  - type: input
+    id: settings
+    attributes:
+      label: Profile, AI model and batch size
+      placeholder: high; openai:gpt-6-luna at low reasoning or no AI; batch size 1
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Steps, expected result and actual result
+      description: Include the page number and the command; remove private paths and URLs.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Redacted report.json and source page screenshot
+      description: Attach both if safe. If you cannot share them, explain what you can reproduce on an original sample.
+  - type: textarea
+    id: environment
+    attributes:
+      label: Docker version, OS and memory available to Docker

@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+        #en-root {
+          position: absolute;
+          inset: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          color: #eef3ef;
+        }
+        #en-glow {
+          position: absolute;
+          left: 460px;
+          top: 190px;
+          width: 1000px;
+          height: 620px;
+          border-radius: 50%;
+          background: radial-gradient(closest-side, rgba(87, 214, 141, 0.22), rgba(87, 214, 141, 0));
+        }
+        #en-mark {
+          position: relative;
+          font-family: "Montserrat", sans-serif;
+          font-weight: 900;
+          font-size: 210px;
+          line-height: 1;
+          letter-spacing: -0.055em;
+        }
+        #en-mark em {
+          font-style: normal;
+          color: #57d68d;
+        }
+        #en-tag {
+          position: relative;
+          margin-top: 34px;
+          font-family: "Montserrat", sans-serif;
+          font-weight: 400;
+          font-size: 60px;
+          letter-spacing: -0.02em;
+          color: #eef3ef;
+        }
+        #en-small {
+          position: relative;
+          margin-top: 40px;
+          font-size: 34px;
+          color: #cfd8d2;
+        }
+      </style>
+
+      <div id="en-root" data-composition-id="end" data-width="1920" data-height="1080">
+        <div id="en-glow"></div>
+        <div id="en-mark">every<em>md</em></div>
+        <div id="en-tag">Every document. Ready for AI.</div>
+        <div id="en-small" class="mono">Open source · built on Docling</div>
+      </div>
+
+      <script>
+        (function () {
+          const tl = gsap.timeline({ paused: true });
+          tl.fromTo("#en-glow", { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.9, ease: "power2.out" }, 0.05);
+          tl.fromTo("#en-mark", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.6, ease: "expo.out" }, 0.12);
+          tl.fromTo("#en-tag", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 0.25);
+          tl.fromTo("#en-small", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power1.out" }, 0.4);
+          // fade to the bare background so the loop restarts cleanly on the hook
+          tl.to(["#en-mark", "#en-tag", "#en-small", "#en-glow"], { opacity: 0, duration: 0.15, ease: "power2.in" }, 2.7);
+          window.__timelines["end"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

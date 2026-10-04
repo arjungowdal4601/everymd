@@ -1,0 +1,73 @@
+{
+  "status": "complete",
+  "caption": null,
+  "brief_file": "scanned_report.brief.md",
+  "index_file": "scanned_report.index.md",
+  "source": "samples/inputs/scanned_report.pdf",
+  "source_id": "/app/samples/inputs/scanned_report.pdf",
+  "detected_type": "pdf",
+  "detection": {
+    "label": "pdf",
+    "method": "magika"
+  },
+  "rendered_to_pdf": false,
+  "renderer": null,
+  "resolution": "high",
+  "use_gpu": true,
+  "device": "cpu",
+  "llm_layer": true,
+  "copy_editor_input": "page images",
+  "batch_size": 1,
+  "model": "gpt-6-luna",
+  "reasoning_effort": "low",
+  "tokens": {
+    "input": 30735,
+    "cached_input": 23286,
+    "cache_write": 7431,
+    "output": 1478,
+    "reasoning": 0
+  },
+  "estimated_cost_usd": 0.001903,
+  "prices": {
+    "checked": "2026-10-03",
+    "source": "https://developers.openai.com/api/docs/models/gpt-6-luna"
+  },
+  "seconds": 40.8,
+  "scanned_pages": [
+    1,
+    2
+  ],
+  "rotated_pages": {},
+  "links": {
+    "found": 0,
+    "placed": 0,
+    "for_copy_editor": 0
+  },
+  "pages": [
+    {
+      "number": 1,
+      "edited_by": "copy-editor",
+      "changes": [
+        "Changed the document title to a level-one heading, corrected the OCR-garbled growth formula to match the printed equation, and added the required chart description."
+      ],
+      "continuity_note": "Where I am: ## 2. How growth is measured. Still open: None. Watch for: Continuation of the report on page 2.",
+      "page_note": "Title: Quarterly Field Report: Water Sensor Pilot. Covers second-quarter community water sensor pilot results, including a regional Q1/Q2 sensor table and a bar chart, then defines quarter-on-quarter growth as (Q2 - Q1) / Q1 × 100."
+    },
+    {
+      "number": 2,
+      "edited_by": "copy-editor",
+      "changes": [],
+      "continuity_note": "Where I am: ## 4. Budget for Q3. Still open: None. Watch for: None.",
+      "page_note": "Sections 3, Next steps, and 4, Budget for Q3. The next steps specify replacing 7 failed South-region sensors before October, adding a second solar charger to every West site, and publishing anonymised readings as open data in Q4; a budget table lists costs in EUR, totaling 2,735."
+    }
+  ],
+  "page_files": [
+    "scanned_report.p0001.md",
+    "scanned_report.p0002.md"
+  ],
+  "notes": [],
+  "versions": {
+    "everymd": "0.1.0",
+    "docling": "2.132.0"
+  }
+}

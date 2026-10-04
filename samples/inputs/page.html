@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Garden Sensor Guide</title>
+<style>
+  body { font-family: sans-serif; margin: 0; }
+  .site-nav { background: #234; color: #fff; padding: 12px 24px; }
+  .site-nav a { color: #fff; margin-right: 18px; }
+  main { max-width: 760px; margin: 24px auto; padding: 0 24px; }
+  table { border-collapse: collapse; } td, th { border: 1px solid #999; padding: 6px 10px; }
+  pre { background: #f4f4f4; padding: 12px; }
+  .cookie { background: #ffe; border: 1px solid #cc9; padding: 10px 24px; }
+  footer { background: #eee; padding: 16px 24px; font-size: 13px; }
+</style>
+</head>
+<body>
+<header class="site-nav">
+  <a href="#">Home</a><a href="#">Shop</a><a href="#">Blog</a><a href="#">Contact</a><a href="#">Sign in</a>
+</header>
+<div class="cookie">We use cookies to improve your experience. <button>Accept all</button> <button>Settings</button></div>
+<main>
+  <h1>Setting up a garden moisture sensor</h1>
+  <img src="chart.png" alt="Sensors online by region" width="600">
+  <p>A soil moisture sensor tells you when to water. This guide shows how to wire one to a small
+  board, calibrate it and read values every ten minutes.</p>
+  <h2>What you need</h2>
+  <ul>
+    <li>One capacitive soil moisture sensor</li>
+    <li>A microcontroller board with an analogue input</li>
+    <li>Three jumper wires and a USB cable</li>
+  </ul>
+  <h2>Calibration values</h2>
+  <table>
+    <tr><th>Soil state</th><th>Raw reading</th><th>Moisture</th></tr>
+    <tr><td>Dry air</td><td>3,100</td><td>0%</td></tr>
+    <tr><td>Damp soil</td><td>2,050</td><td>48%</td></tr>
+    <tr><td>Glass of water</td><td>1,250</td><td>100%</td></tr>
+  </table>
+  <h2>Reading the sensor</h2>
+  <pre><code>import time
+
+DRY, WET = 3100, 1250
+
+def moisture(raw):
+    return round(100 * (DRY - raw) / (DRY - WET))
+
+while True:
+    print(moisture(read_adc()))
+    time.sleep(600)</code></pre>
+  <p>Water the bed when the value stays below 20% for an hour.</p>
+</main>
+<footer>&copy; 2026 Example Gardens &middot; Privacy &middot; Terms &middot; Follow us on social media</footer>
+</body>
+</html>

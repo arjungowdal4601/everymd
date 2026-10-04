@@ -1,0 +1,214 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+        #lg-root {
+          position: absolute;
+          inset: 0;
+          color: #eef3ef;
+        }
+        .lg-sheet {
+          position: absolute;
+          left: 150px;
+          top: 320px;
+          width: 420px;
+          height: 544px;
+          border-radius: 6px;
+          overflow: hidden;
+          box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5);
+        }
+        .lg-sheet img {
+          display: block;
+          width: 100%;
+          height: 100%;
+        }
+        #lg-count {
+          position: absolute;
+          left: 760px;
+          top: 300px;
+          font-family: "Montserrat", sans-serif;
+          font-weight: 900;
+          font-size: 64px;
+          letter-spacing: -0.03em;
+          color: #9aa8a0;
+          white-space: nowrap;
+        }
+        #lg-num {
+          color: #eef3ef;
+          font-variant-numeric: tabular-nums;
+        }
+        #lg-sub {
+          position: absolute;
+          left: 760px;
+          top: 384px;
+          font-size: 28px;
+          color: #9aa8a0;
+        }
+        #lg-files {
+          position: absolute;
+          left: 760px;
+          top: 446px;
+          width: 1050px;
+        }
+        .lg-file {
+          height: 58px;
+          display: flex;
+          align-items: center;
+          gap: 18px;
+          font-size: 32px;
+          color: #cfd8d2;
+          border-bottom: 2px solid #1f2924;
+        }
+        .lg-ok {
+          color: #9aa8a0;
+          font-weight: 700;
+        }
+        #lg-mem {
+          position: absolute;
+          left: 760px;
+          top: 770px;
+          width: 1050px;
+        }
+        .lg-mem-k {
+          font-size: 36px;
+          color: #cfd8d2;
+          margin-bottom: 34px;
+        }
+        .lg-mem-k b {
+          color: #57d68d;
+        }
+        #lg-mem svg {
+          display: block;
+          width: 1050px;
+          height: 70px;
+          overflow: visible;
+        }
+        #lg-axis {
+          stroke: #5f6c65;
+          stroke-width: 2;
+        }
+        #lg-peak {
+          stroke: #9aa8a0;
+          stroke-width: 2;
+          stroke-dasharray: 8 8;
+        }
+        .lg-ax {
+          font-size: 22px;
+          fill: #9aa8a0;
+        }
+        #lg-line {
+          fill: none;
+          stroke: #57d68d;
+          stroke-width: 6;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+        }
+        .lg-pt {
+          fill: #57d68d;
+        }
+      </style>
+
+      <div id="lg-root" class="mono" data-composition-id="long" data-width="1920" data-height="1080">
+        <div class="cap" id="lg-cap">Long PDFs. <em>Steady memory.</em></div>
+
+        <div class="lg-sheet lg-pile" style="transform: translate(36px, 36px) rotate(3deg)"><img src="assets/census-p0074.png" alt="" /></div>
+        <div class="lg-sheet lg-pile" style="transform: translate(24px, 24px) rotate(-2deg)"><img src="assets/census-p0057.png" alt="" /></div>
+        <div class="lg-sheet lg-pile" style="transform: translate(12px, 12px) rotate(1deg)"><img src="assets/census-p0040.png" alt="" /></div>
+        <div class="lg-sheet lg-fly"><img src="assets/census-p0033.png" alt="" /></div>
+        <div class="lg-sheet lg-fly"><img src="assets/census-p0020.png" alt="" /></div>
+        <div class="lg-sheet lg-fly"><img src="assets/census-p0012.png" alt="" /></div>
+        <div class="lg-sheet lg-fly"><img src="assets/census-p0003.png" alt="" /></div>
+        <div class="lg-sheet lg-fly"><img src="assets/census-p0002.png" alt="" /></div>
+
+        <div id="lg-count">page <span id="lg-num">1</span> of 78</div>
+        <div id="lg-sub">78-page scan · Docling only · one page at a time (sped up)</div>
+        <div id="lg-files">
+          <div class="lg-file"><span class="lg-ok">✓</span><span class="lg-name"></span></div>
+          <div class="lg-file"><span class="lg-ok">✓</span><span class="lg-name"></span></div>
+          <div class="lg-file"><span class="lg-ok">✓</span><span class="lg-name"></span></div>
+          <div class="lg-file"><span class="lg-ok">✓</span><span class="lg-name"></span></div>
+        </div>
+        <div id="lg-mem">
+          <div class="lg-mem-k">memory use: <b>steady</b>, measured peak 4.32 GiB</div>
+          <svg viewBox="0 0 1050 70">
+            <line id="lg-axis" x1="0" y1="66" x2="1050" y2="66"></line>
+            <line id="lg-peak" x1="0" y1="0" x2="1050" y2="0"></line>
+            <text class="lg-ax" x="1050" y="0" text-anchor="end" dy="-12">peak 4.32 GiB</text>
+            <text class="lg-ax" x="0" y="66" dy="34">0</text>
+            <polyline id="lg-line" points=""></polyline>
+            <circle class="lg-pt" id="lg-dot" r="10" cx="0" cy="0"></circle>
+          </svg>
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          // measured on the 78-page census scan (eval/work/longrun.log): RSS at the quarters and at the end, in GiB
+          // (max_rss_gib 4.32 over the whole run is the dashed ceiling)
+          const SAMPLES = [[19.5, 3.42], [39, 3.5], [58.5, 3.32], [78, 3.16]];
+          const PEAK = 4.32;
+          const X = (page) => ((page - 1) / 77) * 1040 + 5;
+          const Y = (gb) => 66 - (gb / PEAK) * 66; // 0 at the axis, the measured peak at the dashed line
+          document.getElementById("lg-line").setAttribute("points", SAMPLES.map(([p, g]) => `${X(p).toFixed(1)},${Y(g).toFixed(1)}`).join(" "));
+          const dot = document.getElementById("lg-dot");
+          const yAt = (page) => {
+            if (page <= SAMPLES[0][0]) return Y(SAMPLES[0][1]);
+            for (let i = 1; i < SAMPLES.length; i++) {
+              const [p0, g0] = SAMPLES[i - 1];
+              const [p1, g1] = SAMPLES[i];
+              if (page <= p1) return Y(g0 + ((g1 - g0) * (page - p0)) / (p1 - p0));
+            }
+            return Y(SAMPLES[SAMPLES.length - 1][1]);
+          };
+
+          const tl = gsap.timeline({ paused: true });
+          const COUNT_AT = 0.3;
+          const COUNT_DUR = 1.2;
+
+          tl.fromTo("#lg-cap", { opacity: 0, scale: 1.08, transformOrigin: "0% 50%" }, { opacity: 1, scale: 1, duration: 0.4, ease: "expo.out" }, 0.08);
+          tl.fromTo(".lg-pile", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power1.out" }, 0.05);
+          tl.fromTo(["#lg-count", "#lg-sub", "#lg-files", "#lg-mem"], { opacity: 0, x: 30 }, { opacity: 1, x: 0, duration: 0.4, ease: "power3.out" }, 0.15);
+
+          // pages leave the pile one after another (the top sheet first)
+          const flyers = gsap.utils.toArray(".lg-fly");
+          flyers.forEach((el, i) => {
+            const at = COUNT_AT + (flyers.length - 1 - i) * 0.22;
+            tl.fromTo(
+              el,
+              { opacity: 1, x: 0, y: 0, rotation: 0, scale: 1 },
+              { opacity: 0, x: 400, y: 30 + (i % 3) * 24, rotation: 8 - (i % 2) * 14, scale: 0.28, duration: 0.32, ease: "power2.in" },
+              at,
+            );
+          });
+
+          // the counter, the page files written so far, and the memory dot riding the measured line
+          const num = document.getElementById("lg-num");
+          const names = Array.from(document.querySelectorAll("#lg-files .lg-name"));
+          const state = { v: 1 };
+          const pad = (n) => "census1920.p" + String(n).padStart(4, "0") + ".md";
+          const paint = () => {
+            const n = Math.round(state.v);
+            num.textContent = String(n);
+            names.forEach((el, i) => {
+              const k = n - (names.length - 1 - i);
+              el.textContent = k >= 1 ? pad(k) : "";
+              el.parentNode.style.opacity = k >= 1 ? "1" : "0";
+            });
+            dot.setAttribute("cx", X(state.v).toFixed(1));
+            dot.setAttribute("cy", yAt(state.v).toFixed(1));
+            dot.style.opacity = state.v >= SAMPLES[0][0] ? "1" : "0"; // only where memory was measured
+          };
+          tl.to(state, { v: 78, duration: COUNT_DUR, ease: "power2.out", onUpdate: () => paint() }, COUNT_AT);
+          paint();
+
+          tl.to("#lg-root", { opacity: 0, duration: 0.18, ease: "power2.in" }, 2.2);
+          window.__timelines["long"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

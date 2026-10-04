@@ -1,0 +1,214 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+        #mm-root {
+          position: absolute;
+          inset: 0;
+          color: #eef3ef;
+        }
+        .mm-card {
+          top: 340px;
+          width: 760px;
+          height: 560px;
+        }
+        #mm-left {
+          left: 110px;
+        }
+        #mm-right {
+          left: 1050px;
+        }
+        .mm-page {
+          margin-left: auto;
+          font-family: "Montserrat", sans-serif;
+          font-weight: 900;
+          font-size: 26px;
+          color: #9aa8a0;
+        }
+        .mm-pill {
+          position: absolute;
+          right: 20px;
+          top: 13px;
+          height: 44px;
+          padding: 0 20px;
+          border-radius: 999px;
+          display: flex;
+          align-items: center;
+          font-size: 23px;
+          font-weight: 700;
+          white-space: nowrap;
+        }
+        #mm-p1 {
+          color: #9aa8a0;
+          background: #1b2420;
+        }
+        #mm-p2 {
+          color: #0b0f0d;
+          background: #57d68d;
+        }
+        .mm-body {
+          position: absolute;
+          left: 34px;
+          top: 100px;
+          right: 20px;
+          bottom: 0;
+        }
+        .mm-ln {
+          position: absolute;
+          left: 0;
+          height: 46px;
+          font-size: 25px;
+          line-height: 46px;
+          white-space: pre;
+          color: #cfd8d2;
+        }
+        .mm-dim {
+          color: #7f8c85;
+        }
+        .mm-hdr {
+          font-weight: 700;
+          color: #eef3ef;
+        }
+        .mm-hl {
+          position: absolute;
+          left: -14px;
+          width: 680px;
+          height: 46px;
+          border-radius: 8px;
+          background: rgba(87, 214, 141, 0.16);
+          border: 2px solid rgba(87, 214, 141, 0.7);
+        }
+        #mm-note {
+          position: absolute;
+          left: 130px;
+          top: 196px;
+          width: 824px;
+          padding: 18px 28px;
+          border-radius: 16px;
+          background: #1a2620;
+          border: 3px solid #57d68d;
+          box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55), 0 0 60px rgba(87, 214, 141, 0.25);
+        }
+        .mm-note-k {
+          font-size: 28px;
+          color: #cfd8d2;
+          margin-bottom: 6px;
+        }
+        .mm-note-v {
+          font-size: 32px;
+          font-weight: 700;
+          color: #57d68d;
+          white-space: nowrap;
+        }
+        .mm-tick {
+          left: 1010px;
+          top: 302px;
+          width: 64px;
+          height: 64px;
+          box-shadow: 0 8px 24px rgba(87, 214, 141, 0.35);
+        }
+      </style>
+
+      <div id="mm-root" class="mono" data-composition-id="memory" data-width="1920" data-height="1080">
+        <div class="cap" id="mm-cap">It <em>remembers</em> across pages.</div>
+
+        <div class="card mm-card" id="mm-left">
+          <div class="card-head">continuity.p0001.md<span class="mm-page">page 1</span></div>
+          <div class="mm-body">
+            <div class="mm-hl" id="mm-src" style="top: 0"></div>
+            <div class="mm-ln mm-hdr" style="top: 0">| Site | Date | Moisture (%) | Battery (V) |</div>
+            <div class="mm-ln mm-dim" style="top: 46px">|---|---|---:|---:|</div>
+            <div class="mm-ln mm-dim" style="top: 92px">⋯</div>
+            <div class="mm-ln" style="top: 138px">| S26 | 2026-04-27 | 37 | 3.4 |</div>
+            <div class="mm-ln" style="top: 184px">| S27 | 2026-04-28 | 44 | 3.5 |</div>
+            <div class="mm-ln" style="top: 230px">| S28 | 2026-04-01 | 51 | 3.6 |</div>
+          </div>
+        </div>
+
+        <div class="card mm-card" id="mm-right">
+          <div class="card-head">continuity.p0002.md<div class="mm-pill" id="mm-p1">written by Docling</div><div class="mm-pill" id="mm-p2">AI · column names added</div></div>
+          <div class="mm-body">
+            <div id="mm-before">
+              <div class="mm-ln mm-hdr" id="mm-s29" data-layout-allow-overlap style="top: 0; color: #ff8a7d">| S29   | 2026-04-02   |   18 |   3.7 |</div>
+              <div class="mark" id="mm-mark" style="left: 0; top: 34px; width: 560px; height: 22px"><svg viewBox="0 0 560 22"><path></path></svg></div>
+              <div class="mm-ln mm-dim" style="top: 46px">|-------|--------------|------|-------|</div>
+              <div class="mm-ln" style="top: 92px">| S30   | 2026-04-03   |   25 |   3.3 |</div>
+              <div class="mm-ln" style="top: 138px">| S31   | 2026-04-04   |   32 |   3.4 |</div>
+              <div class="mm-ln" style="top: 184px">| S32   | 2026-04-05   |   39 |   3.5 |</div>
+            </div>
+            <div id="mm-after">
+              <div class="mm-ln mm-a" style="top: 0; color: #57d68d">*(table continued from page 1)*</div>
+              <div class="mm-ln mm-hdr mm-a" style="top: 46px; color: #57d68d">| Site | Date | Moisture (%) | Battery (V) |</div>
+              <div class="mm-ln mm-dim mm-a" style="top: 92px">|---|---|---:|---:|</div>
+              <div class="mm-ln mm-b" style="top: 138px">| S29 | 2026-04-02 | 18 | 3.7 |</div>
+              <div class="mm-ln mm-b" style="top: 184px">| S30 | 2026-04-03 | 25 | 3.3 |</div>
+              <div class="mm-ln mm-b" style="top: 230px">| S31 | 2026-04-04 | 32 | 3.4 |</div>
+              <div class="mm-ln mm-b" style="top: 276px">| S32 | 2026-04-05 | 39 | 3.5 |</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tick mm-tick" id="mm-tick"><svg viewBox="0 0 64 64"><path d="M16 34l10 10L48 22" /></svg></div>
+
+        <div id="mm-note" data-layout-allow-overlap>
+          <div class="mm-note-k" data-layout-allow-overlap>carried from page 1 · table columns</div>
+          <div class="mm-note-v" data-layout-allow-overlap>Site · Date · Moisture (%) · Battery (V)</div>
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          function hash(n, seed) {
+            const x = Math.sin(n * 127.1 + seed * 311.7) * 43758.5453;
+            return (x - Math.floor(x)) * 2 - 1;
+          }
+          let d = "M 2 11";
+          for (let i = 1; i <= 8; i++) {
+            const x = 70 * i;
+            d += ` Q ${(x - 35 + hash(i, 5) * 6).toFixed(1)} ${(11 + (i % 2 ? -1 : 1) * (7 + hash(i + 9, 5) * 2)).toFixed(1)} ${x.toFixed(1)} ${(11 + hash(i + 19, 5) * 2).toFixed(1)}`;
+          }
+          const mark = document.querySelector("#mm-mark path");
+          mark.setAttribute("d", d);
+          const mlen = mark.getTotalLength();
+          const tick = document.querySelector("#mm-tick path");
+          const tlen = tick.getTotalLength();
+
+          const tl = gsap.timeline({ paused: true });
+          tl.fromTo("#mm-cap", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, 0.1);
+          tl.fromTo("#mm-left", { opacity: 0, x: -50 }, { opacity: 1, x: 0, duration: 0.5, ease: "expo.out" }, 0.15);
+          tl.fromTo("#mm-right", { opacity: 0, x: 50 }, { opacity: 1, x: 0, duration: 0.5, ease: "expo.out" }, 0.22);
+
+          // page 2 as Docling read it alone: the first data row became the header
+          tl.set("#mm-mark", { opacity: 0 }, 0);
+          tl.set("#mm-mark", { opacity: 1 }, 0.53);
+          tl.fromTo(mark, { strokeDasharray: mlen, strokeDashoffset: mlen }, { strokeDashoffset: 0, duration: 0.4, ease: "power2.inOut" }, 0.5);
+
+          // page 1's column names light up and travel above the cards to page 2
+          tl.fromTo("#mm-src", { opacity: 0 }, { opacity: 1, duration: 0.25, ease: "power1.out" }, 0.55);
+          tl.fromTo("#mm-note", { opacity: 0, scale: 0.7, x: 0, y: 70 }, { opacity: 1, scale: 1, x: 0, y: 0, duration: 0.35, ease: "power3.out" }, 0.65);
+          tl.to("#mm-note", { x: 856, duration: 0.55, ease: "power2.inOut" }, 1.05);
+          tl.to("#mm-note", { y: 70, opacity: 0, scale: 0.85, duration: 0.22, ease: "power2.in" }, 2.35);
+
+          // page 2 gets its column names back; S29 drops into the body
+          tl.to("#mm-mark", { opacity: 0, duration: 0.15, ease: "power2.in" }, 2.45);
+          tl.to("#mm-before > .mm-ln:not(#mm-s29)", { opacity: 0, duration: 0.15, ease: "power2.in" }, 2.45);
+          tl.to("#mm-s29", { y: 138, color: "#cfd8d2", duration: 0.4, ease: "power3.inOut" }, 2.47);
+          tl.to("#mm-s29", { opacity: 0, duration: 0.3, ease: "power1.in" }, 2.55);
+          tl.fromTo(".mm-b", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power1.out" }, 2.86);
+          tl.fromTo(".mm-a", { opacity: 0, y: -16 }, { opacity: 1, y: 0, duration: 0.35, ease: "expo.out", stagger: 0.07 }, 2.6);
+          tl.to("#mm-p1", { opacity: 0, duration: 0.15, ease: "power2.in" }, 2.6);
+          tl.fromTo("#mm-p2", { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power3.out" }, 2.7);
+          tl.fromTo("#mm-tick", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, duration: 0.42, ease: "expo.out" }, 2.95);
+          tl.fromTo(tick, { strokeDasharray: tlen, strokeDashoffset: tlen }, { strokeDashoffset: 0, duration: 0.35, ease: "power2.out" }, 3.03);
+
+          tl.to("#mm-root", { opacity: 0, duration: 0.2, ease: "power2.in" }, 4.38);
+          window.__timelines["memory"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

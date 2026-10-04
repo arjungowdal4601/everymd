@@ -1,0 +1,28 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|clear|compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$(git rev-parse --show-toplevel 2>/dev/null || pwd)/.agents/skills/track-record/scripts/trackrecord.py\" hook session-start",
+            "statusMessage": "Reading the Track Record",
+            "timeout": 30
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$(git rev-parse --show-toplevel 2>/dev/null || pwd)/.agents/skills/track-record/scripts/trackrecord.py\" hook stop --agent codex",
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  }
+}

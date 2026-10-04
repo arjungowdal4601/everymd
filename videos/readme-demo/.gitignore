@@ -1,0 +1,6 @@
+# scratch and preview output; the README copies live in docs/assets/
+.work/
+.hyperframes/
+snapshots/
+renders/
+node_modules/

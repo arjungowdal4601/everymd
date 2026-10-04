@@ -1,0 +1,150 @@
+{
+  "status": "complete",
+  "caption": null,
+  "brief_file": "en.wikipedia.org-Markdown.brief.md",
+  "index_file": null,
+  "source": "https://en.wikipedia.org/wiki/Markdown",
+  "source_id": "https://en.wikipedia.org/wiki/Markdown",
+  "detected_type": "url",
+  "detection": {
+    "label": "url",
+    "method": "url"
+  },
+  "rendered_to_pdf": true,
+  "renderer": "chromium",
+  "resolution": "high",
+  "use_gpu": true,
+  "device": "cpu",
+  "llm_layer": true,
+  "copy_editor_input": "page images",
+  "batch_size": 1,
+  "model": "gpt-6-luna",
+  "reasoning_effort": "low",
+  "tokens": {
+    "input": 136799,
+    "cached_input": 81185,
+    "cache_write": 55554,
+    "output": 13930,
+    "reasoning": 752
+  },
+  "estimated_cost_usd": 0.014727,
+  "prices": {
+    "checked": "2026-10-03",
+    "source": "https://developers.openai.com/api/docs/models/gpt-6-luna"
+  },
+  "seconds": 164.5,
+  "scanned_pages": [],
+  "rotated_pages": {},
+  "links": {
+    "found": 245,
+    "placed": 215,
+    "for_copy_editor": 7
+  },
+  "pages": [
+    {
+      "number": 1,
+      "edited_by": "copy-editor",
+      "changes": [
+        "Removed the site navigation link; reordered the infobox content into its printed position within the article flow and omitted its labels/values from the text flow where appropriate? Wait image shows infobox; preserve it. Need include table!"
+      ],
+      "continuity_note": "Where I am: ## Markdown > ## History > ## Rise and divergence. Still open: final paragraph ends with “conversion to HTML.” Watch for: continuation of Rise and divergence.",
+      "page_note": "Article titled Markdown; covers the definition and use of Markdown, its file-format infobox, History, and Rise and divergence. The infobox gives extensions, media type, UTI, release details, format type, extensions, and website."
+    },
+    {
+      "number": 2,
+      "edited_by": "copy-editor",
+      "changes": [
+        "Corrected citation marker rendering and paragraph/list flow to match page image.",
+        "Linked John MacFarlane in the infobox as listed."
+      ],
+      "continuity_note": "Where I am: ## Markdown > ## Variants. Still open: final sentence ends with “single-asterisks*.” Watch for: continuation of Variants.",
+      "page_note": "Covers the end of Rise and divergence and CommonMark, including Standardization, Name, and Adoption, with a CommonMark infobox and RFC list. Begins Variants and describes supported inline HTML tags and italic syntax."
+    },
+    {
+      "number": 3,
+      "edited_by": "copy-editor",
+      "changes": [
+        "Removed spaces before punctuation following citation markers."
+      ],
+      "continuity_note": "Where I am: ## Markdown > ## Variants > ### Markdown Extra. Still open: None. Watch for: continuation of Variants.",
+      "page_note": "Continues Variants with spoiler formatting and subsections GitHub Flavored Markdown and Markdown Extra, describing GFM additions and Markdown Extra features and supported content management systems."
+    },
+    {
+      "number": 4,
+      "edited_by": "copy-editor",
+      "changes": [
+        "Included the visible Examples heading.",
+        "Corrected the rendered nested list to show the two numbered items and their nested bullets.",
+        "Corrected the browser-rendered link text/target to match the page image. "
+      ],
+      "continuity_note": "Where I am: ## Examples > ## Text viewed in a browser. Still open: None. Watch for: continuation of the article after the examples.",
+      "page_note": "Examples page demonstrating Markdown syntax, corresponding HTML, and browser-rendered headings, paragraphs, formatting, nested lists, a link, an image, and blockquotes."
+    },
+    {
+      "number": 5,
+      "edited_by": "copy-editor",
+      "changes": [
+        "Removed page-break artifacts from URL strings (spaces within dates/paths).",
+        "Restored the broken HTML fragment at the top as visibly printed: `Language\">HTML</abbr> tags are supported.</p>`."
+      ],
+      "continuity_note": "Where I am: ## References. Still open: Numbered reference list (references 1–4; item 4 ends “Retrieved 20 August 2022.”). Watch for: continuation of References.",
+      "page_note": "Sections Implementations, See also, Explanatory notes, and References. The top begins with a printed HTML/code fragment, followed by a sentence about inline HTML tags; References 1–4 appear."
+    },
+    {
+      "number": 6,
+      "edited_by": "copy-editor",
+      "changes": [
+        "Repaired split URL characters and restored the printed en dashes and em dashes; linked Tweet and Twitter as indicated."
+      ],
+      "continuity_note": "Where I am: ## References. Still open: Numbered reference list continues; item 21 ends “Retrieved 25 April 2014.” Watch for: continuation of References.",
+      "page_note": "References 5–21, including sources on Markdown, RFC 7764, RMarkdown, syntax, and implementation comparisons."
+    },
+    {
+      "number": 7,
+      "edited_by": "copy-editor",
+      "changes": [
+        "Linked “Gruber, John [@gruber]” to the listed address and repaired URL breaks introduced in the text extraction."
+      ],
+      "continuity_note": "Where I am: ## References. Still open: Numbered reference list continues; item 36 ends “Retrieved 11 April 2014.” Watch for: continuation of References.",
+      "page_note": "References 22–36 on Markdown, CommonMark specifications and communities, variant references, and Markdown tools and guides."
+    },
+    {
+      "number": 8,
+      "edited_by": "copy-editor",
+      "changes": [
+        "Fixed joined/split characters in URLs where line wrapping corrupted Docling text; corrected reference 38 archived link target (must use the archived URL shown in the image, not a duplicated archive URL).",
+        "Restored missing reference 46 date: Retrieved 3 June 2026.",
+        "Matched italicized source names in Markdown."
+      ],
+      "continuity_note": "Where I am: ## References > ## Further reading. Still open: Further reading bullet list, last item starts Wilburn, Gene (12 January 2022) and ends with ISBN 978-1-895934-15-1. Watch for: continuation of Further reading.",
+      "page_note": "References 37–53 cover Markdown syntax guidance, spoilers, Telegram/GitHub implementations, extensions and specifications; the Further reading section begins with Gene Wilburn’s 2022 book *Markdown for Writers*."
+    },
+    {
+      "number": 9,
+      "edited_by": "copy-editor",
+      "changes": [
+        "Replaced hyphens with em dashes in the Docling description to match the page image.",
+        "Italicized the site names as shown in the image.",
+        "Removed the hyperlink formatting from the retrieved-from URL, which is displayed as plain text."
+      ],
+      "continuity_note": "Where I am: ## External links. Still open: None. Watch for: None.",
+      "page_note": "External links for the original John Gruber markup, Docling, and Datalab Playground; the final line gives the Wikipedia retrieval URL."
+    }
+  ],
+  "page_files": [
+    "en.wikipedia.org-Markdown.p0001.md",
+    "en.wikipedia.org-Markdown.p0002.md",
+    "en.wikipedia.org-Markdown.p0003.md",
+    "en.wikipedia.org-Markdown.p0004.md",
+    "en.wikipedia.org-Markdown.p0005.md",
+    "en.wikipedia.org-Markdown.p0006.md",
+    "en.wikipedia.org-Markdown.p0007.md",
+    "en.wikipedia.org-Markdown.p0008.md",
+    "en.wikipedia.org-Markdown.p0009.md"
+  ],
+  "notes": [],
+  "versions": {
+    "everymd": "0.1.0",
+    "docling": "2.132.0"
+  }
+}

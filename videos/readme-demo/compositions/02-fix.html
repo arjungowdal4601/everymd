@@ -1,0 +1,340 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+        #fx-root {
+          position: absolute;
+          inset: 0;
+          color: #eef3ef;
+        }
+        #fx-stage {
+          position: absolute;
+          inset: 0;
+        }
+        #fx-page {
+          position: absolute;
+          left: 110px;
+          top: 262px;
+          width: 520px;
+          height: 735px;
+          border-radius: 8px;
+          overflow: hidden;
+          box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+        }
+        #fx-page img {
+          display: block;
+          width: 520px;
+          height: 735px;
+        }
+        .fx-box {
+          position: absolute;
+          border: 4px solid #ff6b5b;
+          border-radius: 6px;
+          background: rgba(255, 107, 91, 0.1);
+        }
+        #fx-band {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 520px;
+          height: 90px;
+          background: linear-gradient(180deg, rgba(87, 214, 141, 0) 0%, rgba(87, 214, 141, 0.32) 70%, rgba(87, 214, 141, 0.9) 96%, rgba(87, 214, 141, 0) 100%);
+        }
+        #fx-panel {
+          left: 720px;
+          top: 262px;
+          width: 1090px;
+          height: 735px;
+        }
+        .fx-dot {
+          width: 14px;
+          height: 14px;
+          border-radius: 50%;
+          background: #2b3631;
+        }
+        .fx-status {
+          position: absolute;
+          right: 22px;
+          top: 13px;
+          height: 44px;
+          padding: 0 20px;
+          border-radius: 999px;
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          font-size: 24px;
+          font-weight: 700;
+          white-space: nowrap;
+          color: #0b0f0d;
+          background: #57d68d;
+        }
+        #fx-st1 {
+          color: #9aa8a0;
+          background: #1b2420;
+        }
+        #fx-pulse {
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          background: #0b0f0d;
+        }
+        .fx-body {
+          position: absolute;
+          left: 40px;
+          top: 96px;
+          right: 30px;
+        }
+        .ln {
+          position: relative;
+          height: 46px;
+          padding-left: 58px;
+          font-size: 28px;
+          line-height: 46px;
+          white-space: nowrap;
+          color: #cfd8d2;
+        }
+        .ln.dim {
+          color: #8f9c95;
+        }
+        .skip {
+          height: 20px;
+          padding-left: 58px;
+          font-size: 20px;
+          line-height: 16px;
+          color: #77827c;
+        }
+        .tx {
+          white-space: pre;
+          display: inline-block;
+        }
+        .fx-alt {
+          position: absolute;
+          left: 58px;
+          top: 0;
+          color: #57d68d;
+        }
+        .fx-grp,
+        .fx-formula {
+          position: relative;
+        }
+        .fx-formula .ln {
+          color: #ff8a7d;
+        }
+        #fx-desc {
+          position: relative;
+          height: 118px;
+          padding: 4px 0 0 58px;
+          font-size: 24px;
+          line-height: 38px;
+          color: #57d68d;
+        }
+        #fx-slot {
+          position: absolute;
+          left: 52px;
+          right: 0;
+          top: 4px;
+          bottom: 2px;
+          border: 3px dashed #ff6b5b;
+          border-radius: 8px;
+        }
+        #fx-hbox {
+          position: absolute;
+          left: 52px;
+          top: 5px;
+          width: 46px;
+          height: 36px;
+          border: 3px solid #ff6b5b;
+          border-radius: 7px;
+        }
+        #fx-note {
+          padding-left: 58px;
+          font-size: 24px;
+          line-height: 34px;
+          color: #57d68d;
+        }
+        .fx-hl {
+          position: absolute;
+          left: -16px;
+          right: -6px;
+          top: 0;
+          bottom: 0;
+          border-radius: 8px;
+          background: rgba(87, 214, 141, 0.14);
+        }
+        .fx-tick {
+          left: 2px;
+          top: 5px;
+          width: 36px;
+          height: 36px;
+        }
+      </style>
+
+      <div id="fx-root" data-composition-id="fix" data-width="1920" data-height="1080">
+        <div id="fx-stage">
+          <div class="cap" id="fx-c1">Docling reads it.</div>
+          <div class="cap" id="fx-c2">Almost <span class="bad">right.</span></div>
+          <div class="cap" id="fx-c3"><em>AI</em> checks every page.</div>
+          <div class="cap" id="fx-c4">And <em>fixes it.</em></div>
+
+          <div id="fx-page">
+            <img src="assets/scan-p1.png" alt="" />
+            <div class="fx-box" id="fx-b1" style="left: 88px; top: 64px; width: 338px; height: 31px; background: none"></div>
+            <div class="fx-box" id="fx-b2" style="left: 100px; top: 228px; width: 316px; height: 198px"></div>
+            <div class="fx-box" id="fx-b3" style="left: 182px; top: 490px; width: 160px; height: 21px; background: none; border-width: 3px"></div>
+            <div id="fx-band"></div>
+          </div>
+
+          <div class="card mono" id="fx-panel">
+            <div class="card-head">
+              <div class="fx-dot"></div>
+              <div class="fx-dot"></div>
+              <div class="fx-dot"></div>
+              <div style="margin-left: 14px">scanned_report.md</div>
+              <div class="fx-status" id="fx-st1">written by Docling</div>
+              <div class="fx-status" id="fx-st2"><span id="fx-pulse"></span>AI checking page 1</div>
+              <div class="fx-status" id="fx-st3">AI · 3 fixes, noted in the file</div>
+            </div>
+            <div class="fx-body">
+              <div class="ln" id="fx-l1">
+                <div class="fx-hl" id="fx-hl1"></div>
+                <span class="tx" id="fx-hash" data-type="#"></span><span class="tx" id="fx-title" data-type="# Quarterly Field Report: Water Sensor Pilot"></span>
+                <div id="fx-hbox"></div>
+                <div class="tick fx-tick" id="fx-k1"><svg viewBox="0 0 64 64"><path d="M16 34l10 10L48 22" /></svg></div>
+              </div>
+              <div class="skip">⋯</div>
+              <div class="ln dim"><span class="tx" data-type="| Region   |   Q1 sensors |   Q2 sensors | Change   |"></span></div>
+              <div class="ln dim"><span class="tx" data-type="|----------|--------------|--------------|----------|"></span></div>
+              <div class="ln dim"><span class="tx" data-type="| North    |          120 |          150 | +25.0%   |"></span></div>
+              <div class="skip">⋯</div>
+              <div class="fx-grp">
+                <div class="fx-hl" id="fx-hl2"></div>
+                <div class="ln">
+                  <span class="tx" data-type="![Image](images/image_000000_7ad2….png)"></span>
+                  <div class="tick fx-tick" id="fx-k2"><svg viewBox="0 0 64 64"><path d="M16 34l10 10L48 22" /></svg></div>
+                </div>
+                <div id="fx-desc"><div id="fx-slot"></div><span id="fx-desc-t"></span></div>
+              </div>
+              <div class="skip">⋯</div>
+              <div class="fx-formula">
+                <div class="fx-hl" id="fx-hl3"></div>
+                <div class="ln" id="fx-f1"><span class="tx" data-type="$$u _ { \ } g = ( Q 2 - Q 1 ) / Q 1 \times"></span></div>
+                <div class="ln" id="fx-f2"><span class="tx" data-type="1 0 0 \, u _ { \ } g$$"></span></div>
+                <span class="tx fx-alt" id="fx-f-good" style="font-size: 28px; line-height: 46px">$$g = (Q2 - Q1) / Q1 \times 100$$</span>
+                <div class="mark" id="fx-m3" style="left: 58px; top: 36px; width: 689px; height: 24px"><svg viewBox="0 0 689 24"><path></path></svg></div>
+                <div class="tick fx-tick" id="fx-k3"><svg viewBox="0 0 64 64"><path d="M16 34l10 10L48 22" /></svg></div>
+              </div>
+              <div class="skip">⋯</div>
+              <div id="fx-note">&lt;!-- ai-edited: Changed the document title to a level-one heading, corrected the OCR-garbled growth formula to match the printed equation, and added the required chart <span style="white-space: nowrap">description. --&gt;</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          // wavy underline, after the registry's hw-underline helper (seeded, deterministic)
+          function hash(n, seed) {
+            const x = Math.sin(n * 127.1 + seed * 311.7) * 43758.5453;
+            return (x - Math.floor(x)) * 2 - 1;
+          }
+          let d = "M 2 12";
+          for (let i = 1; i <= 10; i++) {
+            const x = 68.9 * i;
+            d += ` Q ${(x - 34.4 + hash(i * 4 + 1, 11) * 6).toFixed(1)} ${(12 + (i % 2 ? -1 : 1) * (7 + hash(i * 4 + 2, 11) * 2)).toFixed(1)} ${x.toFixed(1)} ${(12 + hash(i * 4 + 3, 11) * 2).toFixed(1)}`;
+          }
+          const squig = document.querySelector("#fx-m3 path");
+          squig.setAttribute("d", d);
+          const squigLen = squig.getTotalLength();
+          const tickLen = [1, 2, 3].map((n) => document.querySelector("#fx-k" + n + " path").getTotalLength());
+
+          const tl = gsap.timeline({ paused: true });
+
+          // captions: a quick exit, then the next line once the last one has gone
+          [["#fx-c1", 0.15, 2.45], ["#fx-c2", 2.65, 4.75], ["#fx-c3", 4.95, 7.0], ["#fx-c4", 7.2, null]].forEach(([sel, inAt, outAt], i) => {
+            tl.fromTo(sel, { opacity: 0, y: 34 }, { opacity: 1, y: 0, duration: 0.45, ease: i % 2 ? "expo.out" : "power3.out" }, inAt);
+            if (outAt !== null) tl.to(sel, { opacity: 0, y: -24, duration: 0.18, ease: "power2.in" }, outAt);
+          });
+
+          // the Markdown file arrives beside the page (the page is already in place from the hook's match cut)
+          tl.fromTo("#fx-panel", { opacity: 0, x: 70 }, { opacity: 1, x: 0, duration: 0.55, ease: "expo.out" }, 0.05);
+          tl.fromTo("#fx-st1", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power1.out" }, 0.5);
+          tl.fromTo(".skip", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power1.out" }, 2.2);
+
+          // Docling's Markdown types in, line by line (its exact text, cuts marked ⋯)
+          Array.from(document.querySelectorAll("#fx-panel [data-type]")).forEach((el, i) => {
+            const full = el.getAttribute("data-type");
+            const prog = { v: 0 };
+            el.textContent = "";
+            tl.to(prog, { v: full.length, duration: 0.3, ease: "none", onUpdate: () => (el.textContent = full.substring(0, Math.round(prog.v))) }, 0.6 + i * 0.19);
+          });
+
+          // "Almost right": what is wrong, on the page and in the Markdown
+          tl.fromTo("#fx-hbox", { opacity: 0, scale: 1.3 }, { opacity: 1, scale: 1, duration: 0.3, ease: "power3.out" }, 2.75);
+          tl.fromTo(["#fx-hash", "#fx-title"], { color: "#cfd8d2" }, { color: "#ff8a7d", duration: 0.2, ease: "none" }, 2.75);
+          tl.fromTo("#fx-slot", { opacity: 0, scaleY: 0.6 }, { opacity: 1, scaleY: 1, duration: 0.35, ease: "expo.out" }, 2.87);
+          tl.set("#fx-m3", { opacity: 0 }, 0);
+          tl.set("#fx-m3", { opacity: 1 }, 3.02);
+          tl.fromTo(squig, { strokeDasharray: squigLen, strokeDashoffset: squigLen }, { strokeDashoffset: 0, duration: 0.45, ease: "power2.inOut" }, 2.99);
+          [1, 2, 3].forEach((n, i) => {
+            tl.fromTo("#fx-b" + n, { opacity: 0, scale: 1.12 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power3.out" }, 2.75 + i * 0.12);
+          });
+
+          // the AI pass, part one: it checks every line against the page image
+          tl.to("#fx-st1", { opacity: 0, duration: 0.15, ease: "power2.in" }, 4.8);
+          tl.fromTo("#fx-st2", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power3.out" }, 4.9);
+          const pulse = { p: 0 };
+          const pulseEl = document.getElementById("fx-pulse");
+          tl.to(pulse, { p: Math.PI * 16, duration: 3.9, ease: "none", onUpdate: () => (pulseEl.style.opacity = String(0.35 + 0.65 * (0.5 + 0.5 * Math.cos(pulse.p)))) }, 4.9);
+          tl.fromTo("#fx-band", { y: -90, opacity: 0 }, { y: -90, opacity: 1, duration: 0.15, ease: "none" }, 5.0);
+          tl.to("#fx-band", { y: 700, duration: 1.75, ease: "power1.inOut" }, 5.15);
+          tl.to("#fx-band", { opacity: 0, duration: 0.2, ease: "power2.in" }, 6.9);
+          [["#fx-hl1", 5.25], ["#fx-hl2", 5.85], ["#fx-hl3", 6.55]].forEach(([sel, on]) => {
+            tl.fromTo(sel, { opacity: 0 }, { opacity: 1, duration: 0.25, ease: "power1.out" }, on);
+          });
+
+          // part two: it fixes each one, and every fix turns green
+          function fixed(n, at) {
+            tl.to("#fx-b" + n, { borderColor: "#57d68d", backgroundColor: "rgba(87, 214, 141, 0.12)", duration: 0.25, ease: "none" }, at);
+            tl.to("#fx-hl" + n, { opacity: 0, duration: 0.3, ease: "power2.in" }, at + 0.3);
+            tl.fromTo("#fx-k" + n, { opacity: 0, scale: 0.4, rotation: -18 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.45, ease: "expo.out" }, at + 0.05);
+            const tick = document.querySelector("#fx-k" + n + " path");
+            tl.fromTo(tick, { strokeDasharray: tickLen[n - 1], strokeDashoffset: tickLen[n - 1] }, { strokeDashoffset: 0, duration: 0.4, ease: "power2.out" }, at + 0.12);
+          }
+
+          // the title becomes a level-one heading: one "#" goes
+          tl.to("#fx-hbox", { opacity: 0, duration: 0.2, ease: "power2.in" }, 7.35);
+          tl.to("#fx-hash", { opacity: 0, y: -16, duration: 0.25, ease: "power2.in" }, 7.35);
+          tl.to("#fx-title", { x: -16.8, color: "#57d68d", duration: 0.35, ease: "power3.inOut" }, 7.5);
+          fixed(1, 7.35);
+
+          // the chart gets the description it was missing
+          const desc = document.getElementById("fx-desc-t");
+          const descFull = "> **AI-generated description:** Bar chart titled “Sensors online by region” comparing Q1 2026 and Q2 2026 sensors for North (120, 150), South (95, 88)…";
+          const dprog = { v: 0 };
+          tl.to("#fx-slot", { opacity: 0, duration: 0.25, ease: "power2.in" }, 7.75);
+          tl.to(dprog, { v: descFull.length, duration: 0.75, ease: "power1.inOut", onUpdate: () => (desc.textContent = descFull.substring(0, Math.round(dprog.v))) }, 7.8);
+          fixed(2, 7.75);
+
+          // the OCR-garbled formula is retyped as printed
+          tl.to("#fx-m3", { opacity: 0, duration: 0.2, ease: "power2.in" }, 8.15);
+          tl.to(["#fx-f1", "#fx-f2"], { opacity: 0, x: -12, duration: 0.18, ease: "power2.in" }, 8.15);
+          tl.fromTo("#fx-f-good", { opacity: 0, x: 16 }, { opacity: 1, x: 0, duration: 0.4, ease: "power3.out" }, 8.27);
+          fixed(3, 8.15);
+
+          // the receipt: the status says what happened and the change note is in the file
+          tl.to("#fx-st2", { opacity: 0, duration: 0.15, ease: "power2.in" }, 8.8);
+          tl.fromTo("#fx-st3", { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.4, ease: "power3.out" }, 8.85);
+          tl.fromTo("#fx-note", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.55, ease: "power2.out" }, 9.0);
+
+          // hold still (the GIF stays small), then a quick exit
+          tl.to("#fx-stage", { opacity: 0, duration: 0.25, ease: "power2.in" }, 10.72);
+          window.__timelines["fix"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

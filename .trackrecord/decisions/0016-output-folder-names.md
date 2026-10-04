@@ -1,0 +1,3 @@
+# 0016 Output folders: letters in any script, never shared by two inputs
+
+Decided 2026-10-04 (my call under Arjun's instruction to fix the evaluation's issues on my own). Folder names keep letters in any script (`報告-2026` instead of `document`), a URL's query is part of the name (two Wikipedia permalinks no longer share a folder), and a folder that already holds a different input's conversion is never overwritten: the new input gets the same name plus a short hash of its path or URL. report.json records `source_id` for this. Re-converting the same file still replaces its own folder, now atomically (decision 0013).

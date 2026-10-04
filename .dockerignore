@@ -1,0 +1,21 @@
+# Never send secrets or local state into the image build context.
+.env
+.git
+.venv
+__pycache__
+*.pyc
+.pytest_cache
+.ipynb_checkpoints
+outputs
+samples/outputs
+.DS_Store
+
+# Local evaluation data (never in the image)
+eval
+build
+dist
+*.egg-info
+.cache
+
+# README demo video source (Node/HyperFrames, not part of the image)
+videos

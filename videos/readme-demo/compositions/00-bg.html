@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+        #bg-root {
+          position: absolute;
+          inset: 0;
+          background: #0b0f0d;
+          overflow: hidden;
+        }
+        #bg-dots {
+          position: absolute;
+          inset: -60px;
+          background-image: radial-gradient(rgba(154, 168, 160, 0.16) 1.6px, transparent 1.7px);
+          background-size: 44px 44px;
+        }
+        #bg-glow {
+          position: absolute;
+          left: 980px;
+          top: 120px;
+          width: 1300px;
+          height: 1000px;
+          border-radius: 50%;
+          background: radial-gradient(closest-side, rgba(87, 214, 141, 0.16), rgba(87, 214, 141, 0));
+        }
+        #bg-vignette {
+          position: absolute;
+          inset: 0;
+          background: radial-gradient(ellipse at 50% 45%, rgba(11, 15, 13, 0) 55%, rgba(5, 8, 6, 0.65) 100%);
+        }
+      </style>
+
+      <div id="bg-root" data-composition-id="bg" data-width="1920" data-height="1080">
+        <div id="bg-dots" data-layout-allow-overflow></div>
+        <div id="bg-glow" data-layout-allow-overflow></div>
+        <div id="bg-vignette"></div>
+      </div>
+
+      <script>
+        (function () {
+          // A still background: the README GIF compresses only the pixels that change between frames,
+          // so any drift here would multiply the file size.
+          const tl = gsap.timeline({ paused: true });
+          window.__timelines["bg"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

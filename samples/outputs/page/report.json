@@ -1,0 +1,74 @@
+{
+  "status": "complete",
+  "caption": null,
+  "brief_file": "page.brief.md",
+  "index_file": null,
+  "source": "samples/inputs/page.html",
+  "source_id": "/app/samples/inputs/page.html",
+  "detected_type": "html",
+  "detection": {
+    "label": "html",
+    "method": "magika"
+  },
+  "rendered_to_pdf": true,
+  "renderer": "chromium",
+  "resolution": "high",
+  "use_gpu": true,
+  "device": "cpu",
+  "llm_layer": true,
+  "copy_editor_input": "page images",
+  "batch_size": 1,
+  "model": "gpt-6-luna",
+  "reasoning_effort": "low",
+  "tokens": {
+    "input": 24008,
+    "cached_input": 15813,
+    "cache_write": 8177,
+    "output": 1113,
+    "reasoning": 90
+  },
+  "estimated_cost_usd": 0.001739,
+  "prices": {
+    "checked": "2026-10-03",
+    "source": "https://developers.openai.com/api/docs/models/gpt-6-luna"
+  },
+  "seconds": 25.9,
+  "scanned_pages": [],
+  "rotated_pages": {},
+  "links": {
+    "found": 0,
+    "placed": 0,
+    "for_copy_editor": 0
+  },
+  "pages": [
+    {
+      "number": 1,
+      "edited_by": "copy-editor",
+      "changes": [
+        "Added the chart’s printed title, series, categories and values via an image description.",
+        "Reconstructed the code block from the visible formatted code; Docling had collapsed separate lines and blocks."
+      ],
+      "continuity_note": "Where I am: ## Reading the sensor. Still open: Python code block; last printed line is `while True:`. Watch for: continuation of the code block on the next page.",
+      "page_note": "Article titled “Setting up a garden moisture sensor”; includes a chart of sensors online by region for Q1 and Q2 2026, a materials list, calibration values table, and the start of a Python sensor-reading code sample."
+    },
+    {
+      "number": 2,
+      "edited_by": "copy-editor",
+      "changes": [
+        "Restored the code block structure and line break visible in the image.",
+        "Removed the site footer."
+      ],
+      "continuity_note": "Where I am: ## Reading the sensor. Still open: None. Watch for: None.",
+      "page_note": "Completes the Python code for reading the sensor and gives the watering rule: water the bed when the value stays below 20% for an hour."
+    }
+  ],
+  "page_files": [
+    "page.p0001.md",
+    "page.p0002.md"
+  ],
+  "notes": [],
+  "versions": {
+    "everymd": "0.1.0",
+    "docling": "2.132.0"
+  }
+}

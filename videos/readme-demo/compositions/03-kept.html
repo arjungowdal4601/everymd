@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+        #kp-root {
+          position: absolute;
+          inset: 0;
+          color: #eef3ef;
+        }
+        #kp-row {
+          position: absolute;
+          left: 110px;
+          top: 290px;
+          width: 1700px;
+          height: 640px;
+          display: grid;
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+          gap: 40px;
+        }
+        .kp-tile {
+          position: relative;
+          background: #121815;
+          border: 2px solid #26312c;
+          border-radius: 18px;
+          padding: 30px 28px;
+          display: flex;
+          flex-direction: column;
+          box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+        }
+        .kp-show {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 22px;
+        }
+        .kp-show img {
+          display: block;
+          width: 100%;
+          border-radius: 6px;
+        }
+        .kp-md {
+          font-size: 22px;
+          line-height: 32px;
+          color: #cfd8d2;
+          white-space: pre;
+        }
+        .kp-math {
+          font-family: "EB Garamond", serif;
+          font-style: italic;
+          font-size: 33px;
+          line-height: 1.15;
+          white-space: nowrap;
+          color: #eef3ef;
+        }
+        .kp-desc {
+          font-size: 22px;
+          line-height: 33px;
+          color: #57d68d;
+        }
+        .kp-label {
+          font-family: "Montserrat", sans-serif;
+          font-weight: 900;
+          font-size: 36px;
+          letter-spacing: -0.03em;
+          white-space: nowrap;
+          margin-top: 18px;
+        }
+        .kp-tick {
+          right: -18px;
+          top: -18px;
+          width: 64px;
+          height: 64px;
+          box-shadow: 0 8px 24px rgba(87, 214, 141, 0.35);
+        }
+      </style>
+
+      <div id="kp-root" data-composition-id="kept" data-width="1920" data-height="1080">
+        <div class="cap" id="kp-cap">Nothing <em>lost.</em></div>
+        <div id="kp-row">
+          <div class="kp-tile">
+            <div class="kp-show">
+              <img src="assets/table-shot.png" alt="" />
+              <div class="kp-md mono" style="font-size: 19px">| Region   |   Q1 sensors | …
+|----------|--------------| …
+| North    |          120 | …</div>
+            </div>
+            <div class="kp-label">Tables</div>
+            <div class="tick kp-tick"><svg viewBox="0 0 64 64"><path d="M16 34l10 10L48 22" /></svg></div>
+          </div>
+          <div class="kp-tile">
+            <div class="kp-show">
+              <div class="kp-math">g = (Q2 − Q1) / Q1 × 100</div>
+              <div class="kp-md mono" style="white-space: normal">$$g = (Q2 - Q1) / Q1 \times 100$$</div>
+            </div>
+            <div class="kp-label">Formulas</div>
+            <div class="tick kp-tick"><svg viewBox="0 0 64 64"><path d="M16 34l10 10L48 22" /></svg></div>
+          </div>
+          <div class="kp-tile">
+            <div class="kp-show">
+              <img src="assets/chart.png" alt="" />
+              <div class="kp-desc mono">Bar chart titled “Sensors online by region” comparing Q1 2026 and Q2 2026 sensors…</div>
+            </div>
+            <div class="kp-label">Images &amp; charts</div>
+            <div class="tick kp-tick"><svg viewBox="0 0 64 64"><path d="M16 34l10 10L48 22" /></svg></div>
+          </div>
+          <div class="kp-tile">
+            <div class="kp-show">
+              <img src="assets/nist-diagram.png" alt="" style="background: #fff" />
+              <div class="kp-desc mono">The diagram divides the consumer profile into six IoT product capabilities…</div>
+            </div>
+            <div class="kp-label">Diagrams</div>
+            <div class="tick kp-tick"><svg viewBox="0 0 64 64"><path d="M16 34l10 10L48 22" /></svg></div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          const tl = gsap.timeline({ paused: true });
+          tl.fromTo("#kp-cap", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.45, ease: "expo.out" }, 0.1);
+
+          const tiles = gsap.utils.toArray("#kp-row .kp-tile");
+          tiles.forEach((el, i) => {
+            tl.fromTo(el, { opacity: 0, y: 60, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.55, ease: "power3.out" }, 0.22 + i * 0.09);
+          });
+
+          // one tick per tile, a beat apart: each kind of content is kept
+          gsap.utils.toArray("#kp-row .kp-tick").forEach((el, i) => {
+            const at = 0.75 + i * 0.1;
+            tl.fromTo(el, { opacity: 0, scale: 0.3, rotation: -20 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.42, ease: "expo.out" }, at);
+            const p = el.querySelector("path");
+            const len = p.getTotalLength();
+            tl.fromTo(p, { strokeDasharray: len, strokeDashoffset: len }, { strokeDashoffset: 0, duration: 0.35, ease: "power2.out" }, at + 0.08);
+          });
+
+          tl.to("#kp-root", { opacity: 0, duration: 0.2, ease: "power2.in" }, 2.78);
+          window.__timelines["kept"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

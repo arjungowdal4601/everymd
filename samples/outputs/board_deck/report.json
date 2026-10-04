@@ -1,0 +1,78 @@
+{
+  "status": "complete",
+  "caption": null,
+  "brief_file": "board_deck.brief.md",
+  "index_file": "board_deck.index.md",
+  "source": "samples/inputs/board_deck.pptx",
+  "source_id": "/app/samples/inputs/board_deck.pptx",
+  "detected_type": "pptx",
+  "detection": {
+    "label": "pptx",
+    "method": "magika"
+  },
+  "rendered_to_pdf": true,
+  "renderer": "libreoffice",
+  "resolution": "high",
+  "use_gpu": true,
+  "device": "cpu",
+  "llm_layer": true,
+  "copy_editor_input": "page images",
+  "batch_size": 1,
+  "model": "gpt-6-luna",
+  "reasoning_effort": "low",
+  "tokens": {
+    "input": 28873,
+    "cached_input": 18304,
+    "cache_write": 10545,
+    "output": 919,
+    "reasoning": 0
+  },
+  "estimated_cost_usd": 0.001963,
+  "prices": {
+    "checked": "2026-10-03",
+    "source": "https://developers.openai.com/api/docs/models/gpt-6-luna"
+  },
+  "seconds": 24.9,
+  "scanned_pages": [],
+  "rotated_pages": {},
+  "links": {
+    "found": 0,
+    "placed": 0,
+    "for_copy_editor": 0
+  },
+  "pages": [
+    {
+      "number": 1,
+      "edited_by": "copy-editor",
+      "changes": [],
+      "continuity_note": "Where I am: ## Board Update: Q2 2026. Still open: None. Watch for: None.",
+      "page_note": "Title slide for Board Update: Q2 2026, subtitled “Community water sensor pilot”."
+    },
+    {
+      "number": 2,
+      "edited_by": "copy-editor",
+      "changes": [],
+      "continuity_note": "Where I am: ## Board Update: Q2 2026 > ## Sensor rollout by region. Still open: None. Watch for: None.",
+      "page_note": "Table of sensor rollout by region, comparing Q1 and Q2 sensor counts for North, South, East, and West."
+    },
+    {
+      "number": 3,
+      "edited_by": "copy-editor",
+      "changes": [
+        "Added the chart's data labels and a descriptive caption; set the chart title as a subsection heading."
+      ],
+      "continuity_note": "Where I am: ## Board Update: Q2 2026 > ## Growth by region > ### Sensors online by region. Still open: None. Watch for: None.",
+      "page_note": "Slide titled “Growth by region,” with a “Sensors online by region” grouped bar chart comparing Q1 2026 and Q2 2026 sensor counts across North, South, East, and West."
+    }
+  ],
+  "page_files": [
+    "board_deck.s0001.md",
+    "board_deck.s0002.md",
+    "board_deck.s0003.md"
+  ],
+  "notes": [],
+  "versions": {
+    "everymd": "0.1.0",
+    "docling": "2.132.0"
+  }
+}

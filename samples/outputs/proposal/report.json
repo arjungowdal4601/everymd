@@ -1,0 +1,73 @@
+{
+  "status": "complete",
+  "caption": null,
+  "brief_file": "proposal.brief.md",
+  "index_file": "proposal.index.md",
+  "source": "samples/inputs/proposal.docx",
+  "source_id": "/app/samples/inputs/proposal.docx",
+  "detected_type": "docx",
+  "detection": {
+    "label": "docx",
+    "method": "magika"
+  },
+  "rendered_to_pdf": true,
+  "renderer": "libreoffice",
+  "resolution": "high",
+  "use_gpu": true,
+  "device": "cpu",
+  "llm_layer": true,
+  "copy_editor_input": "page images",
+  "batch_size": 1,
+  "model": "gpt-6-luna",
+  "reasoning_effort": "low",
+  "tokens": {
+    "input": 23359,
+    "cached_input": 15395,
+    "cache_write": 7946,
+    "output": 1193,
+    "reasoning": 0
+  },
+  "estimated_cost_usd": 0.001746,
+  "prices": {
+    "checked": "2026-10-03",
+    "source": "https://developers.openai.com/api/docs/models/gpt-6-luna"
+  },
+  "seconds": 24.3,
+  "scanned_pages": [],
+  "rotated_pages": {},
+  "links": {
+    "found": 0,
+    "placed": 0,
+    "for_copy_editor": 0
+  },
+  "pages": [
+    {
+      "number": 1,
+      "edited_by": "copy-editor",
+      "changes": [
+        "Changed the document title to an H1, matching the page's title styling.",
+        "Removed garbled bullet characters from the three goal items."
+      ],
+      "continuity_note": "Where I am: # Project Proposal: Community Sensor Network > ## Expected impact.\nStill open: Sentence ends with “three of four regions:” and continues.\nWatch for: Continue the expected-impact content; connect any chart or figure caption shown next.",
+      "page_note": "Project Proposal: Community Sensor Network. Covers Background, Goals (90% sensor availability; alert below 20% soil moisture; share anonymised readings), and a Budget table totaling EUR 1,570; begins Expected impact with a sentence introducing growth across three of four regions."
+    },
+    {
+      "number": 2,
+      "edited_by": "copy-editor",
+      "changes": [
+        "Added an AI-generated description of the chart, including its printed title, legend, regions, and values."
+      ],
+      "continuity_note": "Where I am: ## Expected impact (continued from page 1).\nStill open: None.\nWatch for: None.",
+      "page_note": "Figure 1 compares sensors online by region during the pilot: Q1 2026 and Q2 2026 values for North, South, East, and West. The chart shows exact values above each bar."
+    }
+  ],
+  "page_files": [
+    "proposal.p0001.md",
+    "proposal.p0002.md"
+  ],
+  "notes": [],
+  "versions": {
+    "everymd": "0.1.0",
+    "docling": "2.132.0"
+  }
+}

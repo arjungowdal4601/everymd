@@ -1,0 +1,35 @@
+x-everymd: &everymd
+  build: .
+  image: everymd:0.1.0
+  init: true
+  env_file:
+    - path: .env
+      required: false
+  environment:
+    PYTHONPATH: /app
+  volumes:
+    - .:/app
+    # Docling downloads its models on first use; keep them between runs.
+    - model-cache:/opt/cache
+  working_dir: /app
+  # Chromium needs more shared memory than Docker's 64 MB default.
+  shm_size: "1gb"
+
+services:
+  app:
+    <<: *everymd
+    command: ["python", "-m", "pytest", "-q"]
+
+  # Notebook server for VS Code ("Existing Jupyter Server") or a browser:
+  #   docker compose up -d jupyter, then connect to http://127.0.0.1:8888/?token=everymd
+  # The port is bound to this Mac only. Set JUPYTER_TOKEN in .env to use your own token.
+  jupyter:
+    <<: *everymd
+    profiles: ["jupyter"]
+    ports:
+      - "127.0.0.1:8888:8888"  # reachable from this Mac only
+    command: ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root",
+              "--ServerApp.root_dir=/app", "--IdentityProvider.token=${JUPYTER_TOKEN:-everymd}"]
+
+volumes:
+  model-cache:

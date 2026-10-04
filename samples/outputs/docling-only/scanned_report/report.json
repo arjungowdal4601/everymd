@@ -1,0 +1,71 @@
+{
+  "status": "complete",
+  "caption": null,
+  "brief_file": null,
+  "index_file": null,
+  "source": "samples/inputs/scanned_report.pdf",
+  "source_id": "/app/samples/inputs/scanned_report.pdf",
+  "detected_type": "pdf",
+  "detection": {
+    "label": "pdf",
+    "method": "magika"
+  },
+  "rendered_to_pdf": false,
+  "renderer": null,
+  "resolution": "high",
+  "use_gpu": true,
+  "device": "cpu",
+  "llm_layer": false,
+  "copy_editor_input": null,
+  "batch_size": 1,
+  "model": null,
+  "reasoning_effort": null,
+  "tokens": {
+    "input": 0,
+    "cached_input": 0,
+    "cache_write": 0,
+    "output": 0,
+    "reasoning": 0
+  },
+  "estimated_cost_usd": 0.0,
+  "prices": {
+    "checked": "2026-10-03",
+    "source": "https://developers.openai.com/api/docs/models/gpt-6-luna"
+  },
+  "seconds": 18.2,
+  "scanned_pages": [
+    1,
+    2
+  ],
+  "rotated_pages": {},
+  "links": {
+    "found": 0,
+    "placed": 0,
+    "for_copy_editor": 0
+  },
+  "pages": [
+    {
+      "number": 1,
+      "edited_by": "docling",
+      "changes": [],
+      "continuity_note": null,
+      "page_note": null
+    },
+    {
+      "number": 2,
+      "edited_by": "docling",
+      "changes": [],
+      "continuity_note": null,
+      "page_note": null
+    }
+  ],
+  "page_files": [
+    "scanned_report.p0001.md",
+    "scanned_report.p0002.md"
+  ],
+  "notes": [],
+  "versions": {
+    "everymd": "0.1.0",
+    "docling": "2.132.0"
+  }
+}

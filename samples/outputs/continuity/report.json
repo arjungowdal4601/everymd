@@ -1,0 +1,98 @@
+{
+  "status": "complete",
+  "caption": null,
+  "brief_file": "continuity.brief.md",
+  "index_file": "continuity.index.md",
+  "source": "samples/inputs/continuity.pdf",
+  "source_id": "/app/samples/inputs/continuity.pdf",
+  "detected_type": "pdf",
+  "detection": {
+    "label": "pdf",
+    "method": "magika"
+  },
+  "rendered_to_pdf": false,
+  "renderer": null,
+  "resolution": "high",
+  "use_gpu": true,
+  "device": "cpu",
+  "llm_layer": true,
+  "copy_editor_input": "page images",
+  "batch_size": 1,
+  "model": "gpt-6-luna",
+  "reasoning_effort": "low",
+  "tokens": {
+    "input": 60402,
+    "cached_input": 42941,
+    "cache_write": 17425,
+    "output": 2618,
+    "reasoning": 0
+  },
+  "estimated_cost_usd": 0.00392,
+  "prices": {
+    "checked": "2026-10-03",
+    "source": "https://developers.openai.com/api/docs/models/gpt-6-luna"
+  },
+  "seconds": 50.3,
+  "scanned_pages": [],
+  "rotated_pages": {},
+  "links": {
+    "found": 0,
+    "placed": 0,
+    "for_copy_editor": 0
+  },
+  "pages": [
+    {
+      "number": 1,
+      "edited_by": "copy-editor",
+      "changes": [
+        "Corrected title heading level to document title (#); retained all table values and screenshot link."
+      ],
+      "continuity_note": "Where I am: # Sensor Field Log > ## 1 Readings.\nStill open: None.\nWatch for: Next page follows the readings section.",
+      "page_note": "Title: Sensor Field Log. Section 1 Readings presents soil moisture (%) and battery (V) for sites S01–S28, dated 2026-04-01 through 2026-04-28, in a table."
+    },
+    {
+      "number": 2,
+      "edited_by": "copy-editor",
+      "changes": [
+        "Added the continued table's column headers and continuation marker."
+      ],
+      "continuity_note": "Where I am: # Sensor Field Log > ## 1 Readings.\nStill open: Table with columns Site, Date, Moisture (%), Battery (V), started page 1; last page-body text ends with the fragment “irriga-”.\nWatch for: Continue the cut-off word/sentence from “irriga-”; readings table may continue.",
+      "page_note": "Continued readings table for sites S29–S40, with dates, moisture (%) and battery (V), followed by a paragraph describing the survey and site conditions. The final sentence breaks at “irriga-”."
+    },
+    {
+      "number": 3,
+      "edited_by": "copy-editor",
+      "changes": [],
+      "continuity_note": "Where I am: ## 2 Maintenance steps.\nStill open: None.\nWatch for: Next page may continue the maintenance steps or begin another section.",
+      "page_note": "Continues the readings narrative with the fragment “tion schedule changed in May” and notes that dry readings at sites S31 to S40 need no follow-up. Begins §2 Maintenance steps and lists three actions for every site visit, including replacing the battery if it reads below 3.4 V."
+    },
+    {
+      "number": 4,
+      "edited_by": "copy-editor",
+      "changes": [
+        "Added a description of the meaningful chart image."
+      ],
+      "continuity_note": "Where I am: ## 2 Maintenance steps.\nStill open: Ordered list continued on page 3; last label 5.\nWatch for: The maintenance steps list may continue.",
+      "page_note": "Continues the maintenance steps with items 4–5. Includes a chart, “Sensors online by region,” comparing Q1 2026 and Q2 2026 counts for North, South, East and West."
+    },
+    {
+      "number": 5,
+      "edited_by": "copy-editor",
+      "changes": [],
+      "continuity_note": "Where I am: ## 3 Next steps.\nStill open: None.\nWatch for: None.",
+      "page_note": "Figure 1 caption: Sensors online by region, Q1 and Q2 2026. Section 3, Next steps, says to repeat the survey after the summer using the same sites and steps."
+    }
+  ],
+  "page_files": [
+    "continuity.p0001.md",
+    "continuity.p0002.md",
+    "continuity.p0003.md",
+    "continuity.p0004.md",
+    "continuity.p0005.md"
+  ],
+  "notes": [],
+  "versions": {
+    "everymd": "0.1.0",
+    "docling": "2.132.0"
+  }
+}

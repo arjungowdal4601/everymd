@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+        #hk-root {
+          position: absolute;
+          inset: 0;
+        }
+        .hk-paper {
+          position: absolute;
+          border-radius: 8px;
+          overflow: hidden;
+          box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+        }
+        .hk-paper img {
+          display: block;
+          width: 100%;
+          height: 100%;
+        }
+        /* the scan sits at the exact slot it holds in the next scene, so the hand-off is a match cut */
+        #hk-scan {
+          left: 110px;
+          top: 262px;
+          width: 520px;
+          height: 735px;
+        }
+        #hk-a {
+          left: 330px;
+          top: 300px;
+          width: 470px;
+          height: 609px;
+        }
+        #hk-b {
+          left: 1320px;
+          top: 300px;
+          width: 470px;
+          height: 609px;
+        }
+        #hk-c {
+          left: 1400px;
+          top: 190px;
+          width: 380px;
+          height: 492px;
+        }
+        #hk-d {
+          left: 640px;
+          top: 630px;
+          width: 480px;
+          height: 360px;
+        }
+        #hk-e {
+          left: 1480px;
+          top: 520px;
+          width: 340px;
+          height: 481px;
+        }
+        #hk-f {
+          left: 900px;
+          top: 290px;
+          width: 420px;
+          height: 339px;
+        }
+        #hk-g {
+          left: 1240px;
+          top: 720px;
+          width: 440px;
+          height: 230px;
+          padding: 22px 26px;
+          background: #ffffff;
+          color: #2b2f2d;
+          font-family: "JetBrains Mono", monospace;
+        }
+        #hk-g .k {
+          font-size: 17px;
+          color: #5c6661;
+        }
+        #hk-g .s {
+          font-family: "Montserrat", sans-serif;
+          font-weight: 700;
+          font-size: 22px;
+          margin: 8px 0 10px;
+          color: #1d2120;
+        }
+        #hk-g .b {
+          font-size: 16px;
+          line-height: 1.45;
+        }
+      </style>
+
+      <div id="hk-root" data-composition-id="hook" data-width="1920" data-height="1080">
+        <div class="cap" id="hk-cap">Documents are <span class="bad">messy.</span></div>
+        <div class="hk-paper" id="hk-a"><img src="assets/census-p0002.png" alt="" /></div>
+        <div class="hk-paper" id="hk-b"><img src="assets/census-p0012.png" alt="" /></div>
+        <div class="hk-paper" id="hk-c"><img src="assets/docx-p1.png" alt="" /></div>
+        <div class="hk-paper" id="hk-e"><img src="assets/html-p1.png" alt="" /></div>
+        <div class="hk-paper" id="hk-f"><img src="assets/invoice.png" alt="" /></div>
+        <div class="hk-paper" id="hk-d"><img src="assets/pptx-p1.png" alt="" /></div>
+        <div class="hk-paper" id="hk-g"><div class="k" data-layout-allow-overlap>From: Priya Nair</div><div class="s" data-layout-allow-overlap>Pilot update: 497 sensors online</div><div class="b" data-layout-allow-overlap>Hi all, Quick update on the water sensor pilot: 497 sensors are online, up from 425 last quarter.</div></div>
+        <div class="hk-paper" id="hk-scan"><img src="assets/scan-p1.png" alt="" /></div>
+      </div>
+
+      <script>
+        (function () {
+          const tl = gsap.timeline({ paused: true });
+
+          // pages drop onto a crooked pile, one after another
+          tl.fromTo("#hk-a", { opacity: 1, y: -330, rotation: 4 }, { opacity: 1, y: 0, rotation: -9, duration: 0.6, ease: "power4.out" }, 0);
+          tl.fromTo("#hk-b", { opacity: 0, y: -760, rotation: 18 }, { opacity: 1, y: 0, rotation: -7, duration: 0.6, ease: "expo.out" }, 0.08);
+          // Word, web page, invoice, slide and email join the pile
+          [["#hk-c", 12, 0.14], ["#hk-e", -4, 0.2], ["#hk-f", 5, 0.26], ["#hk-d", -9, 0.32], ["#hk-g", 6, 0.38]].forEach(([sel, rot, at], i) => {
+            tl.fromTo(sel, { opacity: 1, y: -1150, rotation: rot + (i % 2 ? 16 : -16) }, { opacity: 1, y: 0, rotation: rot, duration: 0.55, ease: i % 2 ? "power4.out" : "expo.out" }, at);
+          });
+          tl.fromTo(
+            "#hk-scan",
+            { opacity: 0, x: 860, y: -820, rotation: -16, scale: 0.94 },
+            { opacity: 1, x: 860, y: -20, rotation: -4, scale: 0.94, duration: 0.65, ease: "power3.out" },
+            0.46,
+          );
+
+          // the line lands while the pile settles
+          tl.fromTo("#hk-cap", { opacity: 0, scale: 1.12, transformOrigin: "0% 50%" }, { opacity: 1, scale: 1, duration: 0.5, ease: "expo.out" }, 0.4);
+          tl.fromTo("#hk-cap .bad", { y: 0 }, { y: -10, duration: 0.12, ease: "power2.out", yoyo: true, repeat: 3 }, 1.25);
+
+          // hand-off: the scan straightens into its place beside the Markdown; the rest of the pile falls away
+          tl.to("#hk-cap", { opacity: 0, y: -24, duration: 0.2, ease: "power2.in" }, 2.55);
+          tl.to(["#hk-a", "#hk-b", "#hk-c", "#hk-d", "#hk-e", "#hk-f", "#hk-g"], { opacity: 0, y: 140, duration: 0.35, ease: "power2.in" }, 2.35);
+          tl.to("#hk-scan", { x: 0, y: 0, rotation: 0, scale: 1, duration: 0.6, ease: "power3.inOut" }, 2.38);
+
+          window.__timelines["hook"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>
